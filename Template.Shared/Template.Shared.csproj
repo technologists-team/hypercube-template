@@ -1,0 +1,18 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+    <PropertyGroup>
+        <TargetFramework>net8.0</TargetFramework>
+        <ImplicitUsings>enable</ImplicitUsings>
+        <Nullable>enable</Nullable>
+        <SatelliteResourceLanguages>en</SatelliteResourceLanguages>
+    </PropertyGroup>
+
+    <ItemGroup>
+      <ProjectReference Include="..\hypercube\Hypercube.Math\Hypercube.Math.csproj" />
+      <ProjectReference Include="..\hypercube\Hypercube.Shared\Hypercube.Shared.csproj" />
+    </ItemGroup>
+    
+    <ItemGroup>
+        <None Include="..\Resources\**" Link="Resources\%(RecursiveDir)%(Filename)%(Extension)" CopyToOutputDirectory="PreserveNewest" />
+    </ItemGroup>
+</Project>
