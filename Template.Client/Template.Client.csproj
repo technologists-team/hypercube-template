@@ -1,17 +1,27 @@
 ﻿<Project Sdk="Microsoft.NET.Sdk">
 
+    <Import Project="..\engine\EngineImports.props" />
+
     <PropertyGroup>
         <OutputType>Exe</OutputType>
         <TargetFramework>net8.0</TargetFramework>
         <ImplicitUsings>enable</ImplicitUsings>
         <Nullable>enable</Nullable>
         <SatelliteResourceLanguages>en</SatelliteResourceLanguages>
+        <StartupObject>Template.Client.Program</StartupObject>
     </PropertyGroup>
+    
+    <ItemGroup>
+        <ProjectReference Include="..\Template.Shared\Template.Shared.csproj" />
+    </ItemGroup>
 
     <ItemGroup>
-      <ProjectReference Include="..\hypercube\Hypercube.Client\Hypercube.Client.csproj" />
-      <ProjectReference Include="..\hypercube\Hypercube.Shared\Hypercube.Shared.csproj" />
-      <ProjectReference Include="..\Template.Shared\Template.Shared.csproj" />
+      <Reference Include="Hypercube.Client">
+        <HintPath>..\hypercube\Hypercube.Client\bin\Debug\net8.0\Hypercube.Client.dll</HintPath>
+      </Reference>
+      <Reference Include="Hypercube.Shared">
+        <HintPath>..\hypercube\Hypercube.Client\bin\Debug\net8.0\Hypercube.Shared.dll</HintPath>
+      </Reference>
     </ItemGroup>
     
 </Project>
